@@ -3,6 +3,10 @@ import { Col, Divider, Row, Input, Button, Space } from 'antd';
 import { DownloadOutlined, LinkOutlined } from '@ant-design/icons';
 import { Card } from 'antd';
 import { Collapse } from 'antd';
+import axios from 'axios';
+
+const baseURL = "https://express-download-media-online.vercel.app/api/posts";
+
 const { Panel } = Collapse;
 
 const { Search } = Input;
@@ -15,6 +19,30 @@ const gridStyle = {
     textAlign: 'center',
 };
 const Home = () => {
+
+    const [datas, setDatas] = React.useState(null);
+    const [link, setLink] = React.useState(null);
+    const [loading, setLoading] = React.useState(false);
+
+    function handleChange (event){
+        setLink(event.target.value);
+    }
+    
+    function createPost(value) {
+        setLoading(true)
+        setDatas(null)
+        console.log(link)
+        axios
+        .post(baseURL, {
+            url: link
+        })
+        .then((response) => {
+            setDatas(response.data.data);
+            console.log(response.data.data);
+            setLoading(false);
+        });
+
+    }
 
     const style = {
         background: '#0092ff',
@@ -87,7 +115,8 @@ const Home = () => {
                                             size='large'
                                             prefix={<LinkOutlined style={{ fontSize: '20px' }} />}
                                             placeholder='Tempelkan Tautan Link Di sini!'
-
+                                            onChange={handleChange}
+                                            onSearch={createPost}
 
 
                                         >
@@ -100,14 +129,83 @@ const Home = () => {
                                     </Col>
 
                                 </Row>
+                                <div className='container'>
+                                    {
+                                        loading?
+                                        <div className='mt-5' style={{ textAlign:'center' }}>
+                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#0033b2' }}>
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#5353f2' }}>
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#a974ff' }}>
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#f990ff' }}>
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#f990ff' }}>
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#a974ff' }}>
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#5353f2' }}>
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#0033b2' }}>
+                                                <span class="sr-only">Loading...</span>
+                                            </div>
+                                        </div>
+                                        :
+                                        null
+                                    }
+                                    <div className='row mt-5'>
+                                    {
+                                        datas && datas != null?
+                                        datas.map((data) =>
+                                            <div className="col-md-4 p-3">
+                                                <div className="card">
+                                                    <img src={`${data.thumbnail}`} height={'400px'} width={'auto'} class="card-img-top" alt="..."/>
+
+                                                    <ul class="list-group list-group-flush">
+                                                        {data.media.map((media) => 
+                                                            <li class="list-group-item" style={{ textAlign:'center' }}>
+                                                                <Button style={{ width:'200px' }} href={`${media.url}`}>Download {media.name} {media.quality ? media.quality : null}</Button>
+
+                                                            </li>
+
+                                                        )}
+                                                        
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        
+                                        )
+                                        :
+                                        null
+                                        
+                                        }
+                                        
+                                        
+                                        
+                                        
+                                        
+                                    </div>
+                                </div>
                             </div>
+                            
                         </div>
                         <div style={{display:'flex',justifyContent:'center'}}>
                             
                             
 
                         </div>
+                        
                     </div>
+                    
 
                     <div className='content' id='content'>
                         <div className='container'>
