@@ -5,7 +5,7 @@ import { Card } from 'antd';
 import { Collapse } from 'antd';
 import axios from 'axios';
 
-const baseURL = "https://express-download-media-online.vercel.app/api/posts";
+const baseURL = "https://api.snapind.com/api/posts";
 
 const { Panel } = Collapse;
 
