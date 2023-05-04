@@ -133,29 +133,29 @@ const Home = () => {
                                     {
                                         loading?
                                         <div className='mt-5' style={{ textAlign:'center' }}>
-                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#0033b2' }}>
-                                                <span class="sr-only">Loading...</span>
+                                            <div className="spinner-grow" role="status" style={{ backgroundColor:'#0033b2' }}>
+                                                <span className="sr-only">Loading...</span>
                                             </div>
-                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#5353f2' }}>
-                                                <span class="sr-only">Loading...</span>
+                                            <div className="spinner-grow" role="status" style={{ backgroundColor:'#5353f2' }}>
+                                                <span className="sr-only">Loading...</span>
                                             </div>
-                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#a974ff' }}>
-                                                <span class="sr-only">Loading...</span>
+                                            <div className="spinner-grow" role="status" style={{ backgroundColor:'#a974ff' }}>
+                                                <span className="sr-only">Loading...</span>
                                             </div>
-                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#f990ff' }}>
-                                                <span class="sr-only">Loading...</span>
+                                            <div className="spinner-grow" role="status" style={{ backgroundColor:'#f990ff' }}>
+                                                <span className="sr-only">Loading...</span>
                                             </div>
-                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#f990ff' }}>
-                                                <span class="sr-only">Loading...</span>
+                                            <div className="spinner-grow" role="status" style={{ backgroundColor:'#f990ff' }}>
+                                                <span className="sr-only">Loading...</span>
                                             </div>
-                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#a974ff' }}>
-                                                <span class="sr-only">Loading...</span>
+                                            <div className="spinner-grow" role="status" style={{ backgroundColor:'#a974ff' }}>
+                                                <span className="sr-only">Loading...</span>
                                             </div>
-                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#5353f2' }}>
-                                                <span class="sr-only">Loading...</span>
+                                            <div className="spinner-grow" role="status" style={{ backgroundColor:'#5353f2' }}>
+                                                <span className="sr-only">Loading...</span>
                                             </div>
-                                            <div class="spinner-grow" role="status" style={{ backgroundColor:'#0033b2' }}>
-                                                <span class="sr-only">Loading...</span>
+                                            <div className="spinner-grow" role="status" style={{ backgroundColor:'#0033b2' }}>
+                                                <span className="sr-only">Loading...</span>
                                             </div>
                                         </div>
                                         :
@@ -167,11 +167,11 @@ const Home = () => {
                                         datas.map((data) =>
                                             <div className="col-md-4 p-3">
                                                 <div className="card">
-                                                    <img src={`${data.thumbnail}`} height={'400px'} width={'auto'} class="card-img-top" alt="..."/>
+                                                    <img src={`${data.thumbnail}`} height={'400px'} width={'auto'} className="card-img-top" alt="..."/>
 
-                                                    <ul class="list-group list-group-flush">
+                                                    <ul className="list-group list-group-flush">
                                                         {data.media.map((media) => 
-                                                            <li class="list-group-item" style={{ textAlign:'center' }}>
+                                                            <li className="list-group-item" style={{ textAlign:'center' }}>
                                                                 <Button style={{ width:'200px' }} href={`${media.url}`}>Download {media.name} {media.quality ? media.quality : null}</Button>
 
                                                             </li>
@@ -210,13 +210,13 @@ const Home = () => {
                     <div className='content' id='content'>
                         <div className='container'>
                             <div className='row'>
-                                <h3 class="h3">Download video Tiktok, Facebook, Instgram, Youtube Tanpa Watermark GRATIS</h3>
+                                <h3 className="h3">Download video Tiktok, Facebook, Instgram, Youtube Tanpa Watermark GRATIS</h3>
                                 <p>Snapin adalah salah satu Platform video Tiktok, Facebook, Instgram, Youtube Downloader terbaik yang tersedia online untuk semua platform
                                     tanpa tanda air. Anda tidak perlu menginstal perangkat lunak apa pun di komputer atau ponsel
                                     Anda, yang Anda butuhkan hanyalah tautan video dari semua platform, dan semua pemrosesan dilakukan di
                                     pihak kami, sehingga Anda dapat unduh video Tiktok, Facebook, Instgram, Youtube dengan sangat cepat ke perangkat Anda
                                     dengan satu klik.</p>
-                                <h4 class="h4 mt-3">Fitur utama</h4>
+                                <h4 className="h4 mt-3">Fitur utama</h4>
                                 <ul style={{ marginLeft: 30 }}>
                                     <li >Kecepatan Cepat... Kami membuat Snapin sangat cepat, Hampir tidak ada penundaan.</li>
                                     <li>Download Tiktok, Facebook, Instgram, Youtube No watermark untuk kualitas yang lebih baik, yang sebagian besar alat di
@@ -239,17 +239,17 @@ const Home = () => {
                                         <ul style={{ fontWeight: 'normal' }}>
                                             <li>Buka aplikasi TikTok, Facebook, Instagram, Youtube di ponsel Anda/atau Situs Web di komputer Anda.</li>
                                             <li>Pilih video apa pun yang ingin Anda unduh.</li>
-                                            <li>Klik untuk <span class="btn-click"> Bagikan</span> tombol di kanan bawah.</li>
-                                            <li>Klik <span class="btn-click"> Salin tautan</span> tombol.</li>
+                                            <li>Klik untuk <span className="btn-click"> Bagikan</span> tombol di kanan bawah.</li>
+                                            <li>Klik <span className="btn-click"> Salin tautan</span> tombol.</li>
                                             <li>Unduh video TikTok, Facebook, Instagram, Youtube, video di perangkat apa pun yang Anda inginkan: seluler, PC, atau tablet. TikTok hanya memungkinkan pengguna untuk download video dengan aplikasinya Tiktok, Facebook, Instagram, Youtube dan video yang diunduh berisi tanda air.</li>
-                                            <li>Kembali ke <span class="btn-click">Snapin</span> dan tempel tautan unduhan Anda ke bidang di atas lalu klik ke <span class="btn-click"> Download</span> tombol.</li> <li>Tunggu server kami melakukan pekerjaan dan kemudian, Pilih Server 1 atau 3 untuk Save video Tiktok, Facebook, Instagram, Youtube ke perangkat Anda.</li>
+                                            <li>Kembali ke <span className="btn-click">Snapin</span> dan tempel tautan unduhan Anda ke bidang di atas lalu klik ke <span className="btn-click"> Download</span> tombol.</li> <li>Tunggu server kami melakukan pekerjaan dan kemudian, Pilih Server 1 atau 3 untuk Save video Tiktok, Facebook, Instagram, Youtube ke perangkat Anda.</li>
                                         </ul>
                                     </Panel>
                                     <Panel header="Cara mendapatkan TikTok, Facebook, Instagram, Youtube video download tautan?" style={{ fontSize: "20px", fontWeight: 'bold' }} key="2">
                                         <ul style={{ fontWeight: 'normal' }}>
                                             <li>Buka situs web atau aplikasi TikTok, Facebook, Instagram, Youtube Anda</li>
                                             <li>Pilih video TikTok, Facebook, Instagram, Youtube yang ingin Anda unduh</li>
-                                            <li>Temukan tombol <span class="btn-click"> Bagikan</span>, Klik. Di sana temukan tombol <span class="btn-click">Salin tautan</span> dan Pilih salin tautan</li>
+                                            <li>Temukan tombol <span className="btn-click"> Bagikan</span>, Klik. Di sana temukan tombol <span className="btn-click">Salin tautan</span> dan Pilih salin tautan</li>
                                             <li>URL video unduhan Anda sudah siap di papan klip.</li>
                                         </ul>
                                     </Panel>
