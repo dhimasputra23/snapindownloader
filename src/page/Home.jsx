@@ -4,6 +4,9 @@ import { DownloadOutlined, LinkOutlined } from '@ant-design/icons';
 import { Card } from 'antd';
 import { Collapse } from 'antd';
 import axios from 'axios';
+import {
+    Link
+  } from "react-router-dom";
 
 const baseURL = "https://api.snapind.com/api/posts";
 
@@ -322,9 +325,13 @@ const Home = () => {
                         <div className="container">
                             <div className="copyright-link">
                                 <ul className="list-unstyled">
-                                    <li><a href={window.location.origin + "/contact"}>Kontak</a></li>
+                                    {/* <li><a href={window.location.origin + "/contact"}>Kontak</a></li>
                                     <li><a href={window.location.origin + "/terms-of-service"}>Ketentuan Layanan</a></li>
-                                    <li><a href={window.location.origin + "/privacy-policy"}>Kebijakan pribadi</a></li>
+                                    <li><a href={window.location.origin + "/privacy-policy"}>Kebijakan pribadi</a></li> */}
+
+                                    <li><Link to="/contact">Kontak</Link></li>
+                                    <li><Link to="/terms-of-service">Ketentuan Layanan</Link></li>
+                                    <li><Link to="/privacy-policy">Kebijakan pribadi</Link></li>
                                 </ul>
                             </div>
                             <div className="copyright-text">© 2023 <a href="#" title="Snapin">Snapin</a>. All rights reserved.</div>
